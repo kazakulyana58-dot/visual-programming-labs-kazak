@@ -1,0 +1,11 @@
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VS Code
+.vscode/
+
+# Временные файлы
+*.tmp
+~$*
