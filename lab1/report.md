@@ -7,11 +7,13 @@
 
 ## 2. Диаграммы процесса
 - **BPMN:** `diagrams/process-bpmn.png`
-- ![Git Diagram](diagrams/process.png)
+  ![Git Diagram](diagrams/process.png)
 - **UML Activity:** `diagrams/activity-uml.png`
-- ![Git Diagram](diagrams/activity-uml.png)
+  ![Git Diagram](diagrams/activity-uml.png)
 - **Sequence Diagram:** `docs/sequence.md`
+  ![Git Diagram](docs/sequence.md)
 - **Flowchart:** `docs/flowchart.md`
+  ![Git Diagram](docs/flowchart.md)
 
 ## 3. Сравнение версионирования (Git Diff)
 При внесении изменений в файлы нотаций:
