@@ -31,4 +31,4 @@ sequenceDiagram
     deactivate Pay
     App-->>Client: Чек и завершение аренды
     deactivate App
-```
+```%% minor update

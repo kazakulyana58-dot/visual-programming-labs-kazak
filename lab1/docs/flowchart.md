@@ -18,3 +18,4 @@ flowchart TD
     
     H --> J([Конец: Поездка завершена])
 ```
+%% minor update
