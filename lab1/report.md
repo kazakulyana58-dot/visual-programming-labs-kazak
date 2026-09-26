@@ -7,7 +7,9 @@
 
 ## 2. Диаграммы процесса
 - **BPMN:** `diagrams/process-bpmn.png`
+- ![Git Diagram](diagrams/process.png)
 - **UML Activity:** `diagrams/activity-uml.png`
+- ![Git Diagram](diagrams/activity-uml.png)
 - **Sequence Diagram:** `docs/sequence.md`
 - **Flowchart:** `docs/flowchart.md`
 
