@@ -1,0 +1,100 @@
+[
+    {
+        "id": "4b9cd606c5b542ef",
+        "type": "tab",
+        "label": "Flow 13",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "865c8bc1ec2ccab5",
+        "type": "inject",
+        "z": "4b9cd606c5b542ef",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "df18f1874944a4d0"
+            ]
+        ]
+    },
+    {
+        "id": "df18f1874944a4d0",
+        "type": "function",
+        "z": "4b9cd606c5b542ef",
+        "name": "function 10",
+        "func": "msg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nconst studentText = \"Запись от Казак (\" + new Date().toLocaleString() + \")\";\nmsg.payload = \"entry.757185635=\" + encodeURIComponent(studentText);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "ebac4525fa3ba3b8"
+            ]
+        ]
+    },
+    {
+        "id": "ebac4525fa3ba3b8",
+        "type": "http request",
+        "z": "4b9cd606c5b542ef",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSeWEsgCmOR39wSfW7w2r55gpuW-PytSL3ilW5iicI5zH-REbw/formResponse",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 300,
+        "wires": [
+            [
+                "1cf63fe7fca263c7"
+            ]
+        ]
+    },
+    {
+        "id": "1cf63fe7fca263c7",
+        "type": "debug",
+        "z": "4b9cd606c5b542ef",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 300,
+        "wires": []
+    }
+]
