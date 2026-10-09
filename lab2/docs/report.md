@@ -37,6 +37,8 @@
 | Каталог данных | `/data` (файл потоков `/data/flows.json`, настройки `/data/settings.js`) |
 | Адрес редактора | `http://127.0.0.1:1880/` |
 
+![docker inspect](../screenshots/00-install-docker.png)
+
 ---
 
 ## 3. Освоенные ноды
