@@ -39,6 +39,7 @@
 
 ![docker inspect](../screenshots/00-install-docker.jpg)
 
+
 ---
 
 ## 3. Освоенные ноды
