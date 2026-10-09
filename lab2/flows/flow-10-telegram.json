@@ -1,0 +1,100 @@
+[
+    {
+        "id": "eb34644d86e56607",
+        "type": "tab",
+        "label": "Flow 10",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3445a896c4f9a3d2",
+        "type": "telegram receiver",
+        "z": "eb34644d86e56607",
+        "name": "",
+        "bot": "989b3cc320761f4f",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "hasinput": false,
+        "inputs": 0,
+        "handleallupdates": false,
+        "handleprocessupdates": false,
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "c7c3cd41360127da"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c7c3cd41360127da",
+        "type": "function",
+        "z": "eb34644d86e56607",
+        "name": "function 7",
+        "func": "const text = msg.payload.content;\nconst chatId = msg.payload.chatId;\n\nif (text === \"/start\") {\n    msg.payload.content = \"Связь. Бот Наш_Слон).\";\n} else {\n    msg.payload.content = \"На связи \" + text;\n}\n\nmsg.payload.chatId = chatId;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 540,
+        "wires": [
+            [
+                "d21393980b39838b"
+            ]
+        ]
+    },
+    {
+        "id": "d21393980b39838b",
+        "type": "telegram sender",
+        "z": "eb34644d86e56607",
+        "name": "",
+        "bot": "989b3cc320761f4f",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "989b3cc320761f4f",
+        "type": "telegram bot",
+        "botname": "Nash_slon",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "85aee5a07c5b8bde",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-telegrambot": "19.0.3"
+        }
+    }
+]

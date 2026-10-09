@@ -1,0 +1,164 @@
+[
+    {
+        "id": "f7018c8ff7011dd7",
+        "type": "tab",
+        "label": "Flow 8",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cd0f404283a98dcd",
+        "type": "http in",
+        "z": "f7018c8ff7011dd7",
+        "name": "",
+        "url": "/api/text",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "380db5ea7caa71df"
+            ]
+        ]
+    },
+    {
+        "id": "380db5ea7caa71df",
+        "type": "change",
+        "z": "f7018c8ff7011dd7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Вот такая собачка",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "a3edafcf01087587"
+            ]
+        ]
+    },
+    {
+        "id": "a3edafcf01087587",
+        "type": "http response",
+        "z": "f7018c8ff7011dd7",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 470,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9981041746e84bd0",
+        "type": "http in",
+        "z": "f7018c8ff7011dd7",
+        "name": "",
+        "url": "/api/info",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "2c68b4ac378ffe93"
+            ]
+        ]
+    },
+    {
+        "id": "2c68b4ac378ffe93",
+        "type": "function",
+        "z": "f7018c8ff7011dd7",
+        "name": "function 4",
+        "func": "msg.payload = {\n    student: \"Казак\",\n    lab: 2,\n    status: \"active\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "4d90dbc54d14e38d"
+            ]
+        ]
+    },
+    {
+        "id": "4d90dbc54d14e38d",
+        "type": "http response",
+        "z": "f7018c8ff7011dd7",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 470,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "17c2c64a0aa68a78",
+        "type": "http in",
+        "z": "f7018c8ff7011dd7",
+        "name": "",
+        "url": "/api/items",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "164e61b5be07d63b"
+            ]
+        ]
+    },
+    {
+        "id": "164e61b5be07d63b",
+        "type": "function",
+        "z": "f7018c8ff7011dd7",
+        "name": "function 5",
+        "func": "const id = msg.req.query.id; // получаем query-параметр ?id=...\n\nif (!id) {\n    msg.statusCode = 400;\n    msg.payload = { error: \"Отсутствует параметр id\" };\n} else if (id === \"1\") {\n    msg.statusCode = 200;\n    msg.payload = { id: 1, name: \"Элемент 1\", owner: \"Казак\" };\n} else {\n    msg.statusCode = 404;\n    msg.payload = { error: \"Элемент не найден\" };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 420,
+        "wires": [
+            [
+                "b5a844e391f6b525"
+            ]
+        ]
+    },
+    {
+        "id": "b5a844e391f6b525",
+        "type": "http response",
+        "z": "f7018c8ff7011dd7",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 470,
+        "y": 420,
+        "wires": []
+    }
+]

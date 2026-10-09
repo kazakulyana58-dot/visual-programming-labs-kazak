@@ -1,0 +1,141 @@
+[
+    {
+        "id": "71e46518916a39f1",
+        "type": "tab",
+        "label": "Flow 11",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "31abc6daf5b22ec2",
+        "type": "inject",
+        "z": "71e46518916a39f1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 600,
+        "wires": [
+            [
+                "938b57d3ceae85b7"
+            ]
+        ]
+    },
+    {
+        "id": "938b57d3ceae85b7",
+        "type": "function",
+        "z": "71e46518916a39f1",
+        "name": "function 8",
+        "func": "const now = new Date().toISOString();\nmsg.payload = `Запись от User (${now})\\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 600,
+        "wires": [
+            [
+                "d969386fab29e981"
+            ]
+        ]
+    },
+    {
+        "id": "d969386fab29e981",
+        "type": "file",
+        "z": "71e46518916a39f1",
+        "name": "",
+        "filename": "/data/data.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 530,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2da583280146db91",
+        "type": "file in",
+        "z": "71e46518916a39f1",
+        "name": "",
+        "filename": "/data/data.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 370,
+        "y": 680,
+        "wires": [
+            [
+                "dc62fe101701ab2d"
+            ]
+        ]
+    },
+    {
+        "id": "072322c3fb11982a",
+        "type": "inject",
+        "z": "71e46518916a39f1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 680,
+        "wires": [
+            [
+                "2da583280146db91"
+            ]
+        ]
+    },
+    {
+        "id": "dc62fe101701ab2d",
+        "type": "debug",
+        "z": "71e46518916a39f1",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 680,
+        "wires": []
+    }
+]

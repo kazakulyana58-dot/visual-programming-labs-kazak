@@ -1,0 +1,75 @@
+[
+    {
+        "id": "8fae60532647b81e",
+        "type": "tab",
+        "label": "Flow 12",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e690dde50eb4013e",
+        "type": "inject",
+        "z": "8fae60532647b81e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "0eb175d0c771a3a5"
+            ]
+        ]
+    },
+    {
+        "id": "ebbb6a5e3c972dc8",
+        "type": "debug",
+        "z": "8fae60532647b81e",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "0eb175d0c771a3a5",
+        "type": "function",
+        "z": "8fae60532647b81e",
+        "name": "function 9",
+        "func": "let count = flow.get(\"counter\") || 0;\ncount += 1;\nflow.set(\"counter\", count);\n\nmsg.payload = {\n    student: \"Uly\",\n    clicks_count: count\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "ebbb6a5e3c972dc8"
+            ]
+        ]
+    }
+]

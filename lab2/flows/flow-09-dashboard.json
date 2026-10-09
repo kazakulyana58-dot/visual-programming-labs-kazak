@@ -1,0 +1,158 @@
+[
+    {
+        "id": "61bbd7341dad3228",
+        "type": "tab",
+        "label": "Flow 9",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2645fd36881333fd",
+        "type": "inject",
+        "z": "61bbd7341dad3228",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "f57974448deb9504"
+            ]
+        ]
+    },
+    {
+        "id": "f57974448deb9504",
+        "type": "function",
+        "z": "61bbd7341dad3228",
+        "name": "function 6",
+        "func": "// Имитация датчика температуры\nmsg.payload = Math.floor(Math.random() * 15) + 20; \n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 260,
+        "wires": [
+            [
+                "dd04c7b06eb62c52"
+            ]
+        ]
+    },
+    {
+        "id": "dd04c7b06eb62c52",
+        "type": "ui_gauge",
+        "z": "61bbd7341dad3228",
+        "name": "",
+        "group": "24939c0debd4c605",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Температура",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 460,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "298db87b16bd1034",
+        "type": "ui_chart",
+        "z": "61bbd7341dad3228",
+        "name": "",
+        "group": "24939c0debd4c605",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 370,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "24939c0debd4c605",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "d27c0a3511ad9aaa",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d27c0a3511ad9aaa",
+        "type": "ui_tab",
+        "name": "Датчики",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3717535cc6c41a12",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
