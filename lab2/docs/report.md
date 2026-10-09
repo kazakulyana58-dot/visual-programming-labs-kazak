@@ -101,6 +101,8 @@
 ```text
 entry.757185635=Запись от Казак (...)
 ```
+![Screenshots](Screenshots/15-google-sheets_1.jpg)
+![Screenshots](Screenshots/15-google-sheets_2.jpg)
 
 ---
 
