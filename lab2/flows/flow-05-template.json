@@ -1,0 +1,95 @@
+[
+    {
+        "id": "f89df7e58b6e60d7",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dbcc8a82624740db",
+        "type": "inject",
+        "z": "f89df7e58b6e60d7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "3b5e6554ffa22ff2"
+            ]
+        ]
+    },
+    {
+        "id": "3b5e6554ffa22ff2",
+        "type": "function",
+        "z": "f89df7e58b6e60d7",
+        "name": "function 3",
+        "func": "msg.payload = {\n    name: \"Ульяна\",\n    surname: \"Казак\",\n    group: \"2026\",\n    score: 95\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "bc4ddb266aa072eb"
+            ]
+        ]
+    },
+    {
+        "id": "bc4ddb266aa072eb",
+        "type": "template",
+        "z": "f89df7e58b6e60d7",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  \"info\": \"Студент {{payload.surname}} {{payload.name}} из группы {{payload.group}}\",\n  \"result\": {{payload.score}}\n}",
+        "output": "json",
+        "x": 480,
+        "y": 200,
+        "wires": [
+            [
+                "b9afc0524d6e72a8"
+            ]
+        ]
+    },
+    {
+        "id": "b9afc0524d6e72a8",
+        "type": "debug",
+        "z": "f89df7e58b6e60d7",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    }
+]

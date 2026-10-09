@@ -1,0 +1,124 @@
+[
+    {
+        "id": "240bbd395208a3ab",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5925d2d76b1cd5a5",
+        "type": "inject",
+        "z": "240bbd395208a3ab",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 180,
+        "wires": [
+            [
+                "7394dd83ef7ed38c"
+            ]
+        ]
+    },
+    {
+        "id": "7394dd83ef7ed38c",
+        "type": "function",
+        "z": "240bbd395208a3ab",
+        "name": "function 2",
+        "func": "// Передаем случайное число от 1 до 100\nmsg.payload = Math.floor(Math.random() * 100) + 1;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "f8488429ea8794a7"
+            ]
+        ]
+    },
+    {
+        "id": "f8488429ea8794a7",
+        "type": "switch",
+        "z": "240bbd395208a3ab",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "lte",
+                "v": "50",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 180,
+        "wires": [
+            [
+                "104514c4e5c67222"
+            ],
+            [
+                "72b1a190bd799d62"
+            ]
+        ]
+    },
+    {
+        "id": "104514c4e5c67222",
+        "type": "debug",
+        "z": "240bbd395208a3ab",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "72b1a190bd799d62",
+        "type": "debug",
+        "z": "240bbd395208a3ab",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 220,
+        "wires": []
+    }
+]
