@@ -170,3 +170,5 @@ curl -i "http://localhost:1880/api/items?id=999"
 | `GET /api/items?id=1` | 200 | `{"id":1,"name":"Элемент 1","owner":"Казак"}` |
 | `GET /api/items?id=999` | 404 | `{"error":"Элемент не найден"}` |
 
+## Скриншоты
+![docker inspect](../screenshots/08-endpoints.jpg)
