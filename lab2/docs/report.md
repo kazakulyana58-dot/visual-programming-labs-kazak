@@ -69,7 +69,7 @@
 
 | № | Файл | Описание |
 |---|---|---|
-| 1 | `lab2/screenshots/01-inject-debug.png` | Flow 1 — Inject & Debug |
+| 1 | ![result](../screenshots/01-inject-debug.jpg) | Flow 1 — Inject & Debug |
 | 2 | `lab2/screenshots/02-function.png` | Flow 2 — Function |
 | 3 | `lab2/screenshots/03-switch.png` | Flow 3 — Switch |
 | 4 | `lab2/screenshots/04-change.png` | Flow 4 — Change |
