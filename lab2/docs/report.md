@@ -67,21 +67,20 @@
 
 Все скриншоты потоков, эндпоинтов и дашборда сохранены в структуре репозитория:
 
-| № | Файл | Описание |
+| № | Сриншоты | Описание |
 |---|---|---|
 | 1 | ![result](../screenshots/01-inject-debug.jpg) | Flow 1 — Inject & Debug |
-| 2 | `lab2/screenshots/02-function.png` | Flow 2 — Function |
-| 3 | `lab2/screenshots/03-switch.png` | Flow 3 — Switch |
-| 4 | `lab2/screenshots/04-change.png` | Flow 4 — Change |
-| 5 | `lab2/screenshots/05-template.png` | Flow 5 — Template |
-| 6 | `lab2/screenshots/06-http-request.png` | Flow 6 — HTTP Request |
-| 7 | `lab2/screenshots/07-mqtt.png` | Flow 7 — MQTT HiveMQ |
-| 8 | `lab2/screenshots/08-endpoints.png` | Flow 8 — GET Endpoints |
-| 9 | `lab2/screenshots/09-dashboard.png` | Flow 9 — UI Dashboard |
-| 10 | `lab2/screenshots/10-telegram.png` | Flow 10 — Telegram Bot |
-| 11 | `lab2/screenshots/11-files.png` | Flow 11 — File I/O |
-| 12 | `lab2/screenshots/12-context.png` | Flow 12 — Context variables |
-| 15 | `lab2/screenshots/15-google-sheets.png` | Ачивка 15 — Google Forms / Sheets |
+| 2 | ![result](../screenshots/02-function.jpg) | Flow 2 — Function |
+| 3 | ![result](../screenshots/03-switch.jpg) | Flow 3 — Switch |
+| 4 | ![result](../screenshots/04-change.jpg) | Flow 4 — Change |
+| 5 | ![result](../screenshots/05-template.jpg) | Flow 5 — Template |
+| 6 | ![result](../screenshots/06-http-request.jpg) | Flow 6 — HTTP Request |
+| 7 | ![result](../screenshots/07-mqtt.jpg) | Flow 7 — MQTT HiveMQ |
+| 8 | ![result](../screenshots/08-endpoints.jpg) | Flow 8 — GET Endpoints |
+| 9 | ![result](../screenshots/09-dashboard.jpg) | Flow 9 — UI Dashboard |
+| 10 | ![result](../screenshots/10-telegram.jpg) | Flow 10 — Telegram Bot |
+| 11 | ![result](../screenshots/11-files.png) | Flow 11 — File I/O |
+| 12 | ![result](../screenshots/12-context.jpg) | Flow 12 — Context variables |
 
 ---
 
