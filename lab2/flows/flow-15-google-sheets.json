@@ -1,0 +1,194 @@
+[
+    {
+        "id": "4b9cd606c5b542ef",
+        "type": "tab",
+        "label": "Flow 13",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "865c8bc1ec2ccab5",
+        "type": "inject",
+        "z": "4b9cd606c5b542ef",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "df18f1874944a4d0"
+            ]
+        ]
+    },
+    {
+        "id": "df18f1874944a4d0",
+        "type": "function",
+        "z": "4b9cd606c5b542ef",
+        "name": "function 10",
+        "func": "msg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nconst time = new Date().toLocaleString(\"ru-RU\", { timeZone: \"Europe/Minsk\" });\nconst studentText = \"Запись от Казак (\" + time + \")\";\nmsg.payload = \"entry.757185635=\" + encodeURIComponent(studentText);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "ebac4525fa3ba3b8"
+            ]
+        ]
+    },
+    {
+        "id": "ebac4525fa3ba3b8",
+        "type": "http request",
+        "z": "4b9cd606c5b542ef",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSeWEsgCmOR39wSfW7w2r55gpuW-PytSL3ilW5iicI5zH-REbw/formResponse",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 300,
+        "wires": [
+            [
+                "1cf63fe7fca263c7"
+            ]
+        ]
+    },
+    {
+        "id": "1cf63fe7fca263c7",
+        "type": "debug",
+        "z": "4b9cd606c5b542ef",
+        "name": "Статус записи (200)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "statusCode",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6e99c3c76da18d2c",
+        "type": "inject",
+        "z": "4b9cd606c5b542ef",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "dfc716b5e0b30609"
+            ]
+        ]
+    },
+    {
+        "id": "dfc716b5e0b30609",
+        "type": "http request",
+        "z": "4b9cd606c5b542ef",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://docs.google.com/spreadsheets/d/1bgwzIvDKmfEtLFXqsjV0jvoQ3plr6ZG3DyRJ_hy-akM/export?format=csv&gid=156380376",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 630,
+        "y": 420,
+        "wires": [
+            [
+                "7966bafa9fd5c839"
+            ]
+        ]
+    },
+    {
+        "id": "7966bafa9fd5c839",
+        "type": "csv",
+        "z": "4b9cd606c5b542ef",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": false,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 810,
+        "y": 420,
+        "wires": [
+            [
+                "d39504a486d0d1f5"
+            ]
+        ]
+    },
+    {
+        "id": "d39504a486d0d1f5",
+        "type": "debug",
+        "z": "4b9cd606c5b542ef",
+        "name": "Данные из таблицы",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 420,
+        "wires": []
+    }
+]
