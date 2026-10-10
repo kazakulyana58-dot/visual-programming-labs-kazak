@@ -93,23 +93,57 @@
 
 ## 7. Интеграция с Google Forms / Sheets (Ачивка 15)
 
+Для сохранения данных из flow в Google Таблицу использована связка **Google Forms → Google Sheets**: форма принимает POST-запрос от Node-RED, а ответы автоматически попадают в связанную таблицу.
+ 
+### 7.1. Настройка доступа
+ 
+- Форма опубликована, доступ для респондентов: «Все, у кого есть ссылка». Вход в аккаунт и ограничение «один ответ» отключены, чтобы форма принимала запросы от Node-RED.
+- Ответы формы связаны с Google Таблицей.
+- Для чтения данных таблица открыта по ссылке с ролью «Читатель».
+![Доступ к форме](../screenshots/15-google-sheets-access-form.jpg)
+ 
+![Доступ к таблице](../screenshots/15-google-sheets-access-sheet.jpg)
+ 
+### 7.2. Запись (flow: `inject` → `function` → `http request` → `debug`)
+ 
 | Параметр | Значение |
 |---|---|
 | Метод | `POST` |
 | Эндпоинт отправки | `https://docs.google.com/forms/d/e/1FAIpQLSeWEsgCmOR39wSfW7w2r55gpuW-PytSL3ilW5iicI5zH-REbw/formResponse` |
 | Content-Type | `application/x-www-form-urlencoded` |
-
-**Тело запроса (payload):**
-
-```text
-entry.757185635=Запись от Казак (...)
+| Поле формы | `entry.757185635` |
+ 
+Нода `function` формирует заголовок и тело запроса:
+ 
+```javascript
+msg.headers = {
+    'Content-Type': 'application/x-www-form-urlencoded'
+};
+ 
+const time = new Date().toLocaleString("ru-RU", { timeZone: "Europe/Minsk" });
+const studentText = "Запись от Казак (" + time + ")";
+msg.payload = "entry.757185635=" + encodeURIComponent(studentText);
+ 
+return msg;
 ```
  
-**Скриншоты:**
+Нода `debug` выводит `msg.statusCode`; успешная отправка возвращает код `200`. Новые записи появляются в таблице.
  
-![Google Sheets — скриншот 1](../screenshots/15-google-sheets_1.jpg)
+![Flow записи и чтения: статус 200 и данные из таблицы](../screenshots/15-google-sheets-write_read.jpg)
  
-![Google Sheets — скриншот 2](../screenshots/15-google-sheets_2.jpg)
+![Записи в Google Таблице](../screenshots/15-google-sheets-sheet.jpg)
+ 
+### 7.3. Чтение (flow: `inject` → `http request` → `csv` → `debug`)
+ 
+| Нода | Настройка |
+|---|---|
+| `http request` | `GET`, URL вида `https://docs.google.com/spreadsheets/d/<ID_ТАБЛИЦЫ>/export?format=csv&gid=<GID>`, Return: UTF-8 string |
+| `csv` | разделитель `comma`, первая строка содержит названия колонок, вывод: один массив |
+| `debug` | `msg.payload` |
+ 
+В отладочной панели приходит массив объектов с колонками «Отметка времени» и «Student», то есть записанные данные успешно прочитаны из таблицы.
+ 
+Результат чтения виден на скриншоте flow выше (панель Debug со строками таблицы).
  
 ---
 
