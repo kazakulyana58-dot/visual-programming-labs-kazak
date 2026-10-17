@@ -85,7 +85,7 @@ author — ссылка на User,
 - **3.2 Global variable.** Создана переменная типа Color `Primary_color` (оранжевый цвет, как у акцентов сайта), применена к элементу.
   ![Global variable](../screenshots/03-global-variable.png)
 - **3.3 Стиль.** Создан стиль `btn-favorite` (тип Button). Его фон задан `Primary_color`; форма (радиус 10, шрифт 600 / 14px, отступы 10/18). Стиль применён к кнопке «В избранное». Стили hover и pressed остались стандартными.
-  ![Стиль btn-favorite](../screenshots/04-style.png)
+  ![Стиль btn-favorite](../screenshots/04-style.png.png)
 - **3.4 Готовый компонент.** 
   ![Компонент](../screenshots/05-component.png)
 
@@ -109,8 +109,9 @@ author — ссылка на User,
 
 **CRUD на странице `reviews`.** Каждое действие реализовано отдельным workflow:
 
-![Create](../screenshots/08-workflow-create.png)
+![Create](../screenshots/09-workflow-create.png)
 ![Delete](../screenshots/10-workflow-delete.png)
+![Delete](../screenshots/08-workflow-create.png)
 
 
 ### Часть 5. Ачивка «Plugins»
