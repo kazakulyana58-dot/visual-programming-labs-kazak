@@ -35,8 +35,6 @@ author — ссылка на User,
 
 ![Промпт и результат генерации](../screenshots/01-prompt.png)
 
-![Футер со строкой «ТВП: Казак»](../screenshots/01-footer.png)
-
 ## 3. Ссылка на dev-версию приложения
 
 **https://my-app-261010-60315.bubbleapps.io/version-test/recipe_detail/1791619316913x748615939706979000?debug_mode=true**
@@ -70,7 +68,7 @@ author — ссылка на User,
 
 **После:**
 
-![Кнопка «В избранное»](../screenshots/02-after.png)
+![Кнопка «В избранное»](../screenshots/02-after-1.png)
 ![После нажатия: «Убрать из избранного»](../screenshots/02-after-2.png)
 
 **Данные и логика:**
@@ -86,9 +84,9 @@ author — ссылка на User,
   ![Заголовок](../screenshots/03-header.png)
 - **3.2 Global variable.** Создана переменная типа Color `Primary_color` (оранжевый цвет, как у акцентов сайта), применена к элементу.
   ![Global variable](../screenshots/03-global-variable.png)
-- **3.3 Стиль.** Создан стиль `btn-favorite` (тип Button). Его фон задан **переменной** `Primary_color`, а не конкретным цветом; форма (радиус 10, шрифт 600 / 14px, отступы 10/18) подогнана под остальные кнопки. Стиль применён к кнопке «В избранное». Стили hover и pressed остались стандартными.
+- **3.3 Стиль.** Создан стиль `btn-favorite` (тип Button). Его фон задан `Primary_color`; форма (радиус 10, шрифт 600 / 14px, отступы 10/18). Стиль применён к кнопке «В избранное». Стили hover и pressed остались стандартными.
   ![Стиль btn-favorite](../screenshots/04-style.png)
-- **3.4 Готовый компонент.** **[ЗАПОЛНИ: какой компонент из Component Library, на какой странице, какие тексты и цвета изменены под тему]**
+- **3.4 Готовый компонент.** 
   ![Компонент](../screenshots/05-component.png)
 
 ### Часть 4. Data и Workflows
@@ -109,12 +107,7 @@ author — ссылка на User,
  
 ![Типы данных и поля](../screenshots/06-data-type.png)
 
-**CRUD на странице [ЗАПОЛНИ: имя страницы].** Каждое действие реализовано отдельным workflow:
-
-- **Create:** **[ЗАПОЛНИ: событие и действие]**
-- **Read:** **[ЗАПОЛНИ: источник данных списка]**
-- **Update:** **[ЗАПОЛНИ: событие и действие]**
-- **Delete:** **[ЗАПОЛНИ: событие и действие]**
+**CRUD на странице `reviews`.** Каждое действие реализовано отдельным workflow:
 
 ![Create](../screenshots/08-workflow-create.png)
 ![Delete](../screenshots/10-workflow-delete.png)
@@ -130,7 +123,6 @@ author — ссылка на User,
 2. В свойстве Initial content элемента указано `Current page's Рецепт's Рейтинг`, поэтому при загрузке звёзды показывают текущую оценку из базы.
 3. Создан workflow `Rating change` с событием «StarRating A's value is changed». Действие «Make changes to a thing» меняет `Current page's Рецепт`, записывая в `Рейтинг` значение `This StarRating's value`.
 
-**Ограничение реализации:** поле `Рейтинг` хранит одно число, поэтому каждая новая оценка перезаписывает предыдущую; средняя оценка нескольких пользователей не считается.
 
 ![Плагин установлен](../screenshots/12-plugin-1-installed.png)
 ![Элемент на странице](../screenshots/12-plugin-2-element.png)
