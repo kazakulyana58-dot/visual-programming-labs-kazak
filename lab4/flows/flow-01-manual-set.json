@@ -1,0 +1,95 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2fd200d3-902c-4224-9ca5-39e06889f58d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "382b2b94-7a91-4a6b-98d5-00952c9872b0",
+              "name": "payload",
+              "value": "Казак Ульяна УИР-241",
+              "type": "string"
+            },
+            {
+              "id": "9740e7f7-88ee-4fae-8fca-7f0929f95b52",
+              "name": "topic",
+              "value": "lab4/Казак/basic",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "5055cf1c-511b-4f35-a450-6d52c56d3156",
+      "name": "edit field"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Получаем данные из предыдущего узла и возвращаем их\nconst items = $input.all();\nconsole.log(\"Полученные данные:\", items);\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "99ec1ade-c127-492f-943f-702435a147b6",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "edit field",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "edit field": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "7fbd3086-2e77-4ec2-a9d3-bb4fb335c478",
+  "meta": {
+    "instanceId": "e0b2416d9e43f64da3edab21b709c10f1b88f772c8366bdd6bcf89844ad90a0e"
+  },
+  "nodeGroups": [],
+  "id": "3Sih6IMlyBktbcew",
+  "tags": []
+}

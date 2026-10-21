@@ -1,0 +1,101 @@
+{
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "404947ba-bd1b-49be-8f97-746356ccd83d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b9765c58-3957-4143-9416-510bfa76e19a",
+              "name": "topic",
+              "value": "lab4/Казак/change",
+              "type": "string"
+            },
+            {
+              "id": "c0e2648a-b3a3-46dd-889c-aa63fb57a62a",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "609848d4-9202-4723-a64a-8072e5711754",
+              "name": "payload",
+              "value": "Измененное сообщение от Ульяны Казак",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "66a7c8d1-b7d9-42f8-8fd3-368b9c472cbb",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "57a0bc09-7c9d-4c11-9e13-04fe9bb02f7b",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "48481945-2f72-464a-bfb2-464040b5d3e6",
+  "meta": {
+    "instanceId": "e0b2416d9e43f64da3edab21b709c10f1b88f772c8366bdd6bcf89844ad90a0e"
+  },
+  "nodeGroups": [],
+  "id": "0FoMpVZ6C6KlYVU7",
+  "tags": []
+}

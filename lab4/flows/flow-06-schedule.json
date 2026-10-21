@@ -1,0 +1,64 @@
+{
+  "name": "My workflow 6",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "0d6a116b-7d98-4408-88c6-bfc6f1d3f5ef",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n    json: {\n        payload: \"Сработало по расписанию\",\n        currentTime: new Date().toISOString(),\n        student: \"Ульяна Казак\",\n        group: \"УИР-241\"\n    }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "b989652a-017e-4890-b1c6-fd325dd8e69d",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "a4a7181d-93e2-4c4a-9e8c-71d5a0af8791",
+  "meta": {
+    "instanceId": "e0b2416d9e43f64da3edab21b709c10f1b88f772c8366bdd6bcf89844ad90a0e"
+  },
+  "nodeGroups": [],
+  "id": "CSwE1RWq2ygAcyVL",
+  "tags": []
+}

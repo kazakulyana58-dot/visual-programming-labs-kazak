@@ -1,0 +1,183 @@
+{
+  "name": "My workflow 9",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f6edf1f4-d1aa-4e2e-851a-90c0a8f15c12",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 20,
+        "filters": {
+          "q": "in:inbox"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "a03b6562-2236-4066-bc8d-8e0c984668d5",
+      "name": "Get many messages",
+      "webhookId": "79055076-b168-4dc8-971c-27eb18c10fb1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "pEpDfIk8E2M6Kj6g",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "640f7faf-62a2-4b35-a276-3298628a88af",
+              "name": "from",
+              "value": "={{ $json.From }}",
+              "type": "string"
+            },
+            {
+              "id": "f9ae932c-246c-4aad-a080-7ce6952917a2",
+              "name": "subject",
+              "value": "={{ $json.Subject }}",
+              "type": "string"
+            },
+            {
+              "id": "1e1010bf-999d-439e-b54c-27798d3b62b9",
+              "name": "snippet",
+              "value": "={{ $json.snippet }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        448,
+        0
+      ],
+      "id": "1530ec6a-71fc-4ca7-98d8-9a045faeccac",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {
+          "fileName": "emails.xlsx",
+          "sheetName": "Emails"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        672,
+        0
+      ],
+      "id": "340b828d-7d90-40b7-aaea-656342858110",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "name": "=emails_{{ $now.toFormat('yyyy-LL-dd_HH-mm') }}.xlsx",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        896,
+        0
+      ],
+      "id": "8662f8f7-1553-4e07-99b4-0914026d5676",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "LxEdrtXX76ff7ie1",
+          "name": "Google Drive account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get many messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many messages": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "7e65e395-2054-484e-b64a-3e84926f34b4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e0b2416d9e43f64da3edab21b709c10f1b88f772c8366bdd6bcf89844ad90a0e"
+  },
+  "nodeGroups": [],
+  "id": "1BbZ1HlefYFNIruO",
+  "tags": []
+}

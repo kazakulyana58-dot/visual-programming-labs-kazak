@@ -1,0 +1,96 @@
+{
+  "name": "My workflow 7",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f98fc272-2d49-4b84-9e57-d1185fdc31fd",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "kazak",
+        "value": "Lab4 Redis test value"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "6dd387a4-458c-4d45-bba6-df0599b919e3",
+      "name": "Redis",
+      "credentials": {
+        "redis": {
+          "id": "zKzurAOSvZDuOOMj",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "kazak",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "2e474164-c8cb-4caf-9c4b-c4a8fcf46595",
+      "name": "Redis1",
+      "credentials": {
+        "redis": {
+          "id": "zKzurAOSvZDuOOMj",
+          "name": "Redis account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Redis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis": {
+      "main": [
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "ee241997-26cb-4e7b-a446-6ec8eed500c4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e0b2416d9e43f64da3edab21b709c10f1b88f772c8366bdd6bcf89844ad90a0e"
+  },
+  "nodeGroups": [],
+  "id": "XKHN578sVUhQ3UFz",
+  "tags": []
+}
