@@ -42,7 +42,7 @@ docker run -d --name n8n -p 5678:5678 \
 
 - «Напиши JS-код для ноды Code в n8n, который берёт массив чисел, считает сумму через цикл for, проверяет условие через if/else и возвращает объект с полем payload».
 - «Как в n8n настроить ветвление по числовому полю больше 50 в ноде IF?»
-- «Сформируй структуру отчёта report.md для защиты лабораторной работы по n8n».
+- «Как настроить свой проект в google cloude».
 
 ## 5. Workflow и скриншоты
 
@@ -66,7 +66,7 @@ docker run -d --name n8n -p 5678:5678 \
 ### 2.4. Manual Trigger → Set → Code
 [flow-04-set.json](../flows/flow-04-set.json)
 
-![2.4](../screenshots/05-flow-set.png)
+![2.4](../screenshots/05-flow-set(2).png)
 
 ### 2.5. Manual Trigger → HTTP Request → Code
 [flow-05-http.json](../flows/flow-05-http.json)
