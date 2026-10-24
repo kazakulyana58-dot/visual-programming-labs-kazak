@@ -66,7 +66,7 @@ docker run -d --name n8n -p 5678:5678 \
 ### 2.4. Manual Trigger → Set → Code
 [flow-04-set.json](../flows/flow-04-set.json)
 
-![2.4](../screenshots/05-flow-set(2).png)
+![2.4](../screenshots/05-flow-set.png)
 
 ### 2.5. Manual Trigger → HTTP Request → Code
 [flow-05-http.json](../flows/flow-05-http.json)
