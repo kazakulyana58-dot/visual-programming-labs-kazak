@@ -15,7 +15,13 @@
     {
       "parameters": {
         "url": "https://api.chucknorris.io/jokes/random",
-        "options": {}
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.5,
@@ -70,7 +76,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "8ddc4418-2659-435f-aecd-07133db2176d",
+  "versionId": "6f886419-465c-4816-bca3-6d8b5dfb5e30",
   "meta": {
     "instanceId": "e0b2416d9e43f64da3edab21b709c10f1b88f772c8366bdd6bcf89844ad90a0e"
   },
