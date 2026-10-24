@@ -28,7 +28,7 @@
 
 ## 2. Ссылка на бота / flow
 
-- **Опубликованный бот:** `https://typebot.co/lab5-kazak-241-fvsx0cc`
+- **Опубликованный бот:** [`https://typebot.co/lab5-kazak-241-fvsx0cc`]
 - **Экспорт flow:** [`../exports/flow-01-lead-generation.json`](../exports/flow-01-lead-generation.json)
 
 ---
