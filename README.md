@@ -7,3 +7,5 @@
 - [Лабораторная №1](lab1/report.md) — Моделирование процессов с использованием Git и визуальных нотаций
 - [Лабораторная №2](lab2/docs/report.md) — Node-RED
 - [Лабораторная №3](lab3/docs/report.md) — Bubble
+- [Лабораторная №4](lab4/docs/report.md) — n8n
+- [Лабораторная №5](lab5/docs/report.md) — Чат-боты
