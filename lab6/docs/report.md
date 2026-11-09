@@ -39,7 +39,7 @@
 
 Проверка на реальном Android-устройстве через Kodular Companion: приложение работает корректно.
 
-(../screenshots/01-device.png)]
+![phone](../screenshots/01-device.png)
 
 ## 4. AI-промпты
 
