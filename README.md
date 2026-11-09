@@ -9,3 +9,4 @@
 - [Лабораторная №3](lab3/docs/report.md) — Bubble
 - [Лабораторная №4](lab4/docs/report.md) — n8n
 - [Лабораторная №5](lab5/docs/report.md) — Чат-боты
+- [Лабораторная №6](lab6/docs/report.md) — Kodular
