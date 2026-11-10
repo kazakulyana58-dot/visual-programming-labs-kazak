@@ -120,7 +120,7 @@ ifs(
 
 | Файл | Что показывает |
 |---|---|
-| `screenshots/01-main-page.png` | Главная страница с фамилией |
+| `![screen](screenshots/01-main-page.png)` | Главная страница с фамилией |
 | `screenshots/01-databases.png` | Люди база данных |
 | `screenshots/02-databases.png` | События база данных |
 | `screenshots/03-databases.png` | Подарки база данных |
