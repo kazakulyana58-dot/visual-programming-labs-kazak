@@ -10,3 +10,4 @@
 - [Лабораторная №4](lab4/docs/report.md) — n8n
 - [Лабораторная №5](lab5/docs/report.md) — Чат-боты
 - [Лабораторная №6](lab6/docs/report.md) — Kodular
+- [Лабораторная №7](lab7/docs/report.md) — Notion
