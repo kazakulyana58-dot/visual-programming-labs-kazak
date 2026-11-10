@@ -2,7 +2,7 @@
 
 **Студент:** Казак Ульяна
 **Предметная область:** планировщик подарков и праздников
-**Ссылка на опубликованную страницу Notion:** <[вставить ссылку](https://successful-universe-194.notion.site/Kazak-Lab7-Gift-Planner-4147280080fa80c1af46e5f050b0c910?source=copy_link)>
+**Ссылка на опубликованную страницу Notion:** <[открыть сайт](https://successful-universe-194.notion.site/Kazak-Lab7-Gift-Planner-4147280080fa80c1af46e5f050b0c910?source=copy_link)>
 
 ---
 
@@ -120,16 +120,15 @@ ifs(
 
 | Файл | Что показывает |
 |---|---|
-| `![screen](screenshots/01-main-page.png)` | Главная страница с фамилией |
-| `screenshots/01-databases.png` | Люди база данных |
-| `screenshots/02-databases.png` | События база данных |
-| `screenshots/03-databases.png` | Подарки база данных |
-| `screenshots/04-relations.png` | Настройки связей |
-| `screenshots/05-formula.png` | Формула |
-| `screenshots/07-views.png` | представления |
+| ![Screen1](../screenshots/01-main-page.png) | Главная страница с фамилией |
+| ![Screen1](../screenshots/01-databases.png) | Люди база данных |
+| ![Screen1](../screenshots/02-databases.png) | События база данных |
+| ![Screen1](../screenshots/03-databases.png) | Подарки база данных |
+| ![Screen1](../screenshots/04-relations.png) | Настройки связей |
+| ![Screen1](../screenshots/05-formula.png) | Формула |
+| ![Screen1](../screenshots/07-views.png) | представления |
 
 ---
-
 
 ## 8. Выводы
 
